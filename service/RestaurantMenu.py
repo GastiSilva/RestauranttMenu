@@ -28,12 +28,6 @@ class RestaurantMenu:
                 subst = ''
                 result = re.sub(regex, subst, data, count=1)
                 archive.write(result)
-            # if re.search("ID:", data) is not None:
-            #     regexx = r"Food.*" + r".*\n"
-            #     substt = ''
-            #     resultt = re.sub(regexx, substt, data, count=1)
-            #     archive.write(resultt)
-
 
     @classmethod
     def remove_order(cls):
@@ -42,3 +36,4 @@ class RestaurantMenu:
             print('REQUEST REMOVE')
         else:
             print('The order does not exist')
+

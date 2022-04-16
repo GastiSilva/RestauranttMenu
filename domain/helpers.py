@@ -1,12 +1,12 @@
-# the function returns a random value for the price
-# the function returns a random time
+# the function give_amount returns a random value for the price
+# the function give_time returns a random time
 from random import randint
 
 
 class Helpers:
     @classmethod
     def give_amount(cls):
-        return randint(200, 1300)
+        return randint(200, 1400)
 
     @classmethod
     def give_time(cls):
