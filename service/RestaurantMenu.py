@@ -8,7 +8,7 @@ class RestaurantMenu:
     @classmethod
     def add_food(cls, food):
         with open(cls.archive_route, 'a', encoding='utf-8') as archive:
-            archive.write(f'ID: {food._food_id}\nFood: {food.name}, Amount: {food.amount}, Time: {food.time}\n')
+            archive.write(f'ID:{food._food_id}--> \nFood:{food.name}, Amount:{food.amount}, Time:{food.time}\n')
 
     @classmethod
     def list_order(cls):
@@ -24,7 +24,7 @@ class RestaurantMenu:
             data = archive.read()
         with open(cls.archive_route, 'w', encoding='utf-8') as archive:
             if re.search(re.escape(food_id), data) is not None:
-                regex = r"ID:.*" + re.escape(food_id) + r".*\n" + r"Food:.*" + r".*\n"
+                regex = r"ID:.*" + re.escape(food_id) + r"-->.*\n" + r"Food:.*" + r".*\n"
                 subst = ''
                 result = re.sub(regex, subst, data, count=1)
                 archive.write(result)

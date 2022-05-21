@@ -1,15 +1,18 @@
+from domain.helpers import Helpers as hp
+
+
 # in the food class, we see the name, amount and
 # time attributes (referring to the time it takes for the food to come out)
 
 class Food:
     count = -1
 
-    def __init__(self, name, amount, time):
+    def __init__(self, name):
         Food.count += 1
         self._food_id = Food.count
         self._name = name
-        self._amount = amount
-        self._time = time
+        self._amount = hp.give_amount()
+        self._time = hp.give_time()
 
     @property
     def name(self):
